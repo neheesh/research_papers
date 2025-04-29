@@ -1,0 +1,584 @@
+%!TeX Program = xelatex
+\documentclass[12pt]{article}
+
+\usepackage{preamble}
+
+\begin{document}
+
+%\include{titlepage}
+%\include{acknowledgment_abstract}
+
+\newpage
+\tableofcontents
+\addcontentsline{toc}{section}{Table of Content}
+
+\newpage
+\listoffigures
+
+\newpage
+\listoftables
+
+%----------------------------------------------------------
+
+\newpage
+\noborders
+\pagenumbering{arabic}
+
+\section{INTRODUCTION}
+
+\par The growing demand for high-performance communication systems, especially in satellite applications, has created a pressing need for innovative antenna technologies, with high-gain antennas being crucial for amplifying signal strength, ensuring reliable connections, and optimizing power efficiency in Ku-band satellite communication systems that operate within the 12-18 GHz frequency range. Microstrip patch antennas have emerged as a promising solution, offering a unique combination of compact size, lightweight structure, and seamless integration with various substrates and communication systems, while their ease of fabrication, low cost, and versatility in design have contributed to their increasing popularity.\\
+
+\par This project focuses on designing, analyzing, and optimizing a high-gain microstrip patch antenna tailored for Ku-band satellite communication, featuring a hybrid feeding network that enables efficient power distribution and exceptional performance. The antenna's innovative feeding network is designed to optimize radiation characteristics, maximizing gain and minimizing losses, while its operation in the odd mode of a fundamental frequency contributes to miniaturization, enhanced efficiency, and improved operational stability, distinguishing it from conventional designs that often suffer from limited bandwidth and reduced efficiency.\\
+
+\par The antenna's structural design utilizes a waveguide-microstrip hybrid feeding network, combining the benefits of both technologies to achieve exceptional performance, leveraging the high gain and directional radiation of waveguide structures and the compact size and lightweight nature of microstrip antennas. A comprehensive evaluation of the antenna's performance is conducted through a thorough analysis of key metrics, including gain vs. frequency, radiation pattern, and efficiency, verifying its ability to deliver high gain, efficient radiation, and robust performance within the Ku-band spectrum.\\
+
+\par The project's results showcase the proposed high-gain microstrip patch antenna design's vast potential for modern Ku-band satellite communication applications, offering a compelling solution by balancing compact size, high efficiency, and enhanced performance, making it an essential component for reliable and efficient communication in spaceborne and terrestrial systems.\\
+
+\par In conclusion, this project has successfully designed, analyzed, and optimized a high-gain microstrip patch antenna for Ku-band satellite communication, offering an attractive solution for modern satellite systems due to its hybrid feeding network, odd-mode operation, and waveguide-microstrip hybrid structure, which collectively provide high performance, compact size, and low weight, making it an ideal choice for contemporary satellite communication applications.\\
+
+
+\newpage
+\subsection{About Micro-strip Patch Antennas}
+\par The escalating demand for high-performance communication systems, particularly in satellite applications, has underscored the necessity for cutting-edge antenna technologies, with high-gain antennas being crucial for amplifying signal strength, ensuring reliable connections, and optimizing power efficiency in Ku-band satellite communication systems operating between 12-18 GHz, and microstrip patch antennas have emerged as a promising solution, offering a unique combination of compact size, lightweight structure, and seamless integration with various substrates and communication systems.\\
+
+\par This project focuses on designing, analyzing, and optimizing a high-gain microstrip patch antenna specifically tailored for Ku-band satellite communication. The proposed antenna features a hybrid feeding network, enabling efficient power distribution while maintaining exceptional performance. By operating in the odd mode of a fundamental frequency, this antenna achieves miniaturization, enhanced efficiency, and improved operational stability, setting it apart from conventional designs.\\
+
+\par The antenna's structural design leverages a waveguide-microstrip hybrid feeding network, combining the benefits of both technologies to achieve outstanding performance. Fabricated on a copper substrate, the antenna features a D-shaped microstrip patch antenna at its core, excited by three feeding ports to ensure effective energy distribution and enhanced radiation performance.\\
+
+\par A comprehensive evaluation of the antenna's performance is conducted by analyzing key metrics, including gain vs. frequency, radiation pattern, and efficiency. This thorough assessment verifies the antenna's ability to deliver high gain, efficient radiation, and robust performance within the Ku-band spectrum.\\
+
+\par The selection of materials also plays a crucial role, with substrates like Rogers RT/Duroid offering low dielectric losses and supporting high-frequency operations. This makes the antenna exceptionally suitable for applications demanding precision and reliability, including satellite broadcasting, high-speed internet, and military communication systems.\\
+
+\par Overall, this high-gain microstrip patch antenna design offers a compelling solution for modern Ku-band satellite communication applications, striking a balance between compact size, high efficiency, and enhanced performance in spaceborne and terrestrial communication systems\\
+
+\newpage
+\subsection{Ku Band(12-18GHz)}
+\par The Ku-band, spanning from 12 GHz to 18 GHz, is a vital segment of the microwave frequency spectrum. Its name, derived from the German term "Kurz-under," meaning "under short wavelengths," highlights its position at shorter wavelengths within the frequency spectrum. This band plays a critical role in satellite communication systems, radar technologies, and remote sensing applications due to its favorable properties.\\
+
+\par One of the key advantages of the Ku-band is its ability to support compact antenna designs, which are not only cost-effective but also versatile for various applications. These antennas, with smaller dish sizes ranging from 0.6 to 1.8 meters, are ideal for home-based systems, mobile applications, and broadcasting services such as Direct-to-Home (DTH) television and broadband internet services. In contrast to larger C-band antennas, Ku-band systems are more accessible for consumer-grade applications due to their compactness and adaptability.\\
+
+\par The Ku-band provides significant advantages, including high data rates and efficient bandwidth utilization through frequency reuse techniques, thereby increasing communication capacity and making it a crucial component of modern satellite networks. Despite its benefits, the Ku-band also poses challenges, notably rain attenuation, where high-frequency signals are susceptible to degradation due to atmospheric moisture, but techniques like adaptive power control and site diversity are employed to mitigate this issue, ensuring reliable performance even in adverse weather conditions. In radar applications, the Ku-band's high resolution is a significant advantage, enabling accurate detection of small objects. This makes it ideal for military tracking systems, weather radars, and automotive collision-avoidance systems. Additionally, its capability for drone detection and precision in aircraft altimeters further underscores its importance in critical safety and navigation technologies.\\
+
+\par Microstrip patch antennas have become the preferred choice for Ku-band applications due to their lightweight, low-profile design, and seamless integration with modern satellite systems, and are often fabricated using advanced dielectric substrates like Rogers RT/Duroid to minimize signal losses and maximize efficiency. To address the growing demands for higher gain and broader bandwidth, innovative design techniques such as stacked patches, slot-loading, and array configurations are utilized, enhancing the antenna's performance and making them ideal for high-speed data communication, satellite broadcasting, and radar systems. As the demand for more compact and efficient communication systems grows, the Ku-band, coupled with advancements in antenna technologies, continues to be a cornerstone of modern communication and sensing solutions. Its unique combination of high frequency, compact antenna designs, and efficient bandwidth utilization makes it an essential component of modern satellite networks, radar systems, and remote sensing applications.
+
+\subsection{Ku-Band For Satellite Communications}
+\par The Ku-band (12–18 GHz) is one of the backbone technologies of satellite communications, used for everything from broadcast television and broadband internet to VSAT (Very Small Aperture Terminal) networks and in-flight connectivity. The flexibility and high efficiency of Ku-band make it the first option for a multitude of applications, especially direct-to-home (DTH) television services, which deliver HD and UHD broadcasts. One of its prime features is its use of relatively small ground antennas, usually measuring 0.6 to 1.8 meters in diameter, which suits the mobile and maritime applications including cruise ship internet, in-flight Wi-Fi, and military communications.\\
+
+\par The major advantage of the Ku-band is its higher frequency range that means greater bandwidth and faster data transfer rates, as compared with lower-frequency bands like the C-band (4–8 GHz). This, in turn, enables efficient frequency reuse, in which multiple users can share the same satellite without significant interference. As a consequence, Ku-band is widely adopted for broadband internet services, enabling everything from business operations and telemedicine to emergency communication networks.\\
+
+\par With that in mind, however, Ku-band isn't without its challenges. One of the most notable is rain fade—signal loss caused by atmospheric moisture, particularly during heavy rain or snow. Because Ku-band frequencies are more sensitive to water vapor and precipitation, they experience higher signal attenuation than lower-frequency bands. Against this, there are adaptive power control, site diversity, and advanced error correction techniques to make sure connectivity is not affected by bad weather. Modern high-throughput satellites (HTS) have also raised the bar through spot beam technology that directs power towards specific regions and boost the efficiency and data rate for users.\\
+
+\par Another reason why Ku-band is so popular is global availability and regulatory advantages. Unlike the Ka-band, 26–40 GHz, whose beam width is narrow and calls for more accurate antenna alignment, Ku-band hits the sweet spot between size of the antenna, power efficiency, and area of coverage. This has made it an excellent choice for commercial broadcasting, disaster recovery, and military operations, in which reliability can never be compromised. Plus, the infrastructure for Ku-band ground stations is more affordable and easier to deploy than Ka-band systems, making it a cost-effective solution for widespread use.\\
+
+\par In short, the Ku-band is a satellite communications workhorse that delivers high-speed data transfer, compact antennas, and global coverage. Its challenge remains with rain fade; however, recent improvements in beamforming, signal processing, and error correction are now making it the most reliable Ku-band ever.\\
+
+%-----------------------------------------------------------
+
+\newpage
+\subsection{Existing Models}
+\par A low-profile self-triplexing antenna is designed for Ku-band wireless communications. An improved slot added to the top metal layer of the SIW cavity has allowed us to independently tune each of the three ports with a strong interference immunity between them. To demonstrate the tuning capability, we have built and tested two versions of the design. The first is the self-triplexing antenna that operates on three different frequencies: 12.9 GHz, 13.8 GHz, and 14.5 GHz, while the gains stand at 6.3 dBi, 6.06 dBi, and 5.63 dBi, respectively. It shows an excellent port isolation of above 29.7 dB between ports. This one is a self-diplexing antenna. It operates at 13 GHz with a gain of 6.29 dBic and at 14.5 GHz with a gain of 5.73 dBi, while having isolation better than 30 dB.\\
+
+\par \noindent The simulation and experimental results are in excellent agreement, indicating that the proposed design is a flexible tuner and has strong performance.\\
+
+\begin{center}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\linewidth]{Basepaper}
+    \caption{Existing similar model referred from the base paper}
+    \label{fig:Base paper}
+\end{figure}
+\end{center}
+
+%------------------------------------------------------------
+
+\newpage
+\subsection{System Requirements}
+\par This project is simulated using ANSYS which is a simulation software which is used for designing (2D,3D models of the antenna with different shapes and materials) and optimizing (use parametric analysis optimization and genetic algorithms to improve certain parameters) and analyzing various performances of the antennas. The ANSYS tool provides much accuracy with reduced in design time. The Ansys HFSS is a powerful student version software widely used for simulating high-frequency electromagnetic fields. It is specifically designed for engineers and students working on RF and microwave designs, antenna analysis, and other high-frequency applications. Here are some key points about the HFSS student version:
+
+\begin{itemize}
+    \item Capabilities: HFSS allows one to simulate an electromagnetic field within very intricate structures. It supports various types of antennas, RF/microwave components, and high-speed interconnects.
+
+    \item Ease of Use: The student version of HFSS mainly offers a user-friendly interface which helps students and researchers quickly set up and analyze electromagnetic problems without the need for much programming expertise.
+
+    \item Educational Use-Its primary objective is educational purposes for students and academics to gain or acquire information about the topics covered. For most educational software versions, models tend to have more limitations placed upon them; one such constraint often is limited size and even sometimes the quantity of simulation runs made.
+
+    \item HFSS is mainly utilized in sectors of aerospace, telecommunication, automobiles, electronics in designing or developing antennas, filters, connectors, and RF or microwave products. Simulation Features: Supports a wide range of simulation types, such as modal, frequency domain, transient, and eigenmode analyses, which help users analyze the behavior of their designs under a variety of conditions.
+
+    \item Integration: HFSS integrates very well with other Ansys tools and CAD software, so design workflows can be initiated smoothly from CAD models to electromagnetic simulations.
+
+    \item Learning Resources: The software is accompanied by rich documentation, tutorials, and user forums where students learn and become familiar with HFSS for easy further exploration of advanced electromagnetic concepts and simulations.
+
+    \item License Restrictions: The student version usually has certain restrictions on commercial use and, possibly, on export of simulation results or designs for commercial utilization.
+
+\end{itemize}
+
+\par The Ansys HFSS student version can be used to provide practical experience in electromagnetic simulation, which is invaluable for understanding real-world applications in RF and microwave engineering.
+
+%------------------------------------------------------------
+
+\newpage
+\subsection{Objectives Of The Project}
+
+\begin{enumerate}
+    \item \textbf{To design a high-gain microstrip patch antenna suitable for Ku-band satellite communication.}
+
+    \par The primary objective of this project is to design a high-gain microstrip patch antenna optimized for Ku-band satellite communication operating in the 12–18 GHz range. This frequency band is of significant importance for applications based on satellites, such as broadband internet, direct-to-home television, and mobile communication systems, because it supports high data rates and enables the use of smaller, more compact antennas.\\
+
+    \par The design process will be based on refining key parameters, including the patch shape, the substrate material, and its thickness, to achieve an efficient antenna across the Ku-band. That is to say, the goal is to make an antenna that provides high gain and means that a strong and reliable communication link can be maintained with the satellites, but with a compact design, because it must integrate nicely into existing satellite systems. A wide bandwidth for reaching a broad range of frequencies within the Ku-band, with minimal signal loss, is also essential.\\
+
+    \item \textbf{To analyze and optimize the antenna’s performance using advanced simulation tools (ANSYS)}
+
+    \par Upon specification of the primary design parameters, the next activity is to further delve into analyzing and optimizing performance with the advanced simulation tools offered by ANSYS HFSS. ANSYS HFSS, a powerful software utilizing the finite element method (FEM), analyzes how antennas behave in three-dimensional space and allows for the design of electromagnetic field behavior. This tool will be invaluable for the examination of critical performance metrics like resonance frequency, return loss, impedance matching, and radiation patterns.\\
+
+    \par By running simulations on different design configurations-tweaking patch shapes, substrate materials, and dimensions-we can fine-tune the antenna to achieve the best possible gain, efficiency, and bandwidth for Ku-band communication. The iteration of this simulation process not only helps optimize the design but allows us to detect and correct the possible issues as early as in the design stages, long before the antenna will be physically implemented. This results in a much more efficient and reliable design procedure that saves valuable time and resources, while guaranteeing a top-of-the-range antenna that complies with all modern satellite communications' requirements.\\
+
+    \newpage
+    \item \textbf{To evaluate the antenna’s performance in terms of gain in dB, frequency in GHz through experimental validation.}
+
+    \par Once having spent a few arduous days in intense design and simulation stages, this is the step: experimental validation. This marks where the rubber will meet the road, if indeed our designed microstrip patch antenna lives to the promises and dreams we see within it.\\
+
+    \par The first step is to build a prototype of the antenna based on the optimized simulation results. We will produce it with all the technical accuracy and pay attention to each detail. After that, we measure the resonant frequency of the antenna and verify that it operates within the desired Ku-band of 12-18 GHz.\\
+
+    \par We will evaluate the gain in dB (decibels) using specialized measurement equipment, which might include a vector network analyzer and an anechoic chamber, to find out the real-life performance of the antenna with an accurate measure of its radiation pattern and gain.\\
+
+    \par We then compare these experimental results with the simulation predictions and look for discrepancies that may point to areas for further optimization. This is where the iterative design process really pays off – by analyzing any differences between the simulated and measured results, we can fine-tune the design to achieve even better performance.\\
+
+    \par The final aim is to show that our microstrip patch antenna fulfills the expected performance criteria of reliable satellite communication. This translates to high gain, low loss, and an almost constant frequency response within the Ku-band range. Now, we know that the closer we can take our design to its limits while testing it against real-world scenarios, the more assured we are about its flawless performance.\\
+\end{enumerate}
+
+%------------------------------------------------------------
+
+\newpage
+\subsection{Proposed Model}
+\par The proposed work here consists of 3D rectangular boundary in which the design of the antenna is introduced with certain parameters as shown in Table1.\\
+
+\begin{center}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\linewidth]{Coppersub}
+    \caption{Copper substrate}
+    \label{fig:copper substrate}
+\end{figure}
+\end{center}
+
+\par The designing part starts from configuring the copper substrate material, and three lumped ports are created by using certain parameters as mentioned in the figure 2.
+
+\begin{center}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.4\linewidth]{DShapeAntenna}
+    \caption{D Shape Antenna}
+    \label{fig:D Shape Antenna}
+\end{figure}
+\end{center}
+
+\par After creation of lumped ports, the D shape is created by using a Hemisphere. The three separate rectangles are designed along with XZ and YZ planes. The created rectangles are placed near to the D shape and they are united together as shown in figure 3.
+
+\begin{center}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\linewidth]{DShapeAfterVia}
+    \caption{D Shape After Adding Vias}
+    \label{fig:D Shape after adding vias}
+\end{figure}
+\end{center}
+
+\par The substrate material is etched at particular spots with 0.508mm of depth, such that the Vias are inserted within the etched surface having the same dimensions. The type of vias used in this design are “Through-hole vias” which connects the multiple layers on PCB and allows the signals to pass through as shown in figure 4.
+
+\begin{table}[H]
+\centering
+\renewcommand{\arraystretch}{1.4} % Adjusts row height
+\begin{tabular}{|>{\centering\arraybackslash}m{4cm}|>{\centering\arraybackslash}m{4cm}|}
+\hline
+\textbf{Variables} & \textbf{Configuration} \\ \hline
+LENGTH (L)         & 27mm                   \\ \hline
+RADIUS (RP)        & 11mm                   \\ \hline
+LC                 & 5mm                    \\ \hline
+L1                 & 3mm                    \\ \hline
+L2                 & 3.4mm                  \\ \hline
+L3                 & 2.9mm                  \\ \hline
+WIDTH (W)          & 1.5mm                  \\ \hline
+THICKNESS (G)      & 0.508mm                \\ \hline
+R1                 & 2.7mm                  \\ \hline
+R2                 & 3.1mm                  \\ \hline
+R3                 & 4.3mm                  \\ \hline
+LUMPED PORT (P)    & 5mm                    \\ \hline
+\end{tabular}
+\caption{Table of Variables and Configurations}
+\label{tab:variables_configurations}
+\end{table}
+
+\par This detailed table outlines the key variables and their corresponding configurations for a specific D-shaped high-gain microstrip patch antenna design. Each variable is assigned a precise dimensional value, which plays a crucial role in defining the antenna's geometry and structure. Here's a breakdown of the variables and their values:
+
+\begin{enumerate}
+    \item \textbf{Length (L):} The antenna's overall length is set at 27 mm, providing a foundation for its geometric configuration.
+
+    \item \textbf{Radius (RP):} A circular section within the antenna has a radius of 11 mm, contributing to the antenna's curved design.
+
+    \item \textbf{LC:} This parameter has a value of 5 mm, likely representing a specific segment or layer connection within the antenna's structure.
+
+    \item \textbf{Segment Lengths (L1, L2, L3):} Three distinct segments of the antenna have the following lengths:
+    \begin{itemize}
+        \item L1 = 3 mm
+        \item L2 = 3.4 mm
+        \item L3 = 2.9 mm
+    \end{itemize}
+
+    \item \textbf{Width (W):} A specific component within the antenna has a width of 1.5 mm, adding to the antenna's intricate design.
+
+    \item \textbf{Thickness (G):} The substrate or a specific layer has a thickness of 0.508 mm, influencing the antenna's overall structure and performance.
+
+    \item \textbf{Curved Radii (R1, R2, R3):} Three curved portions of the antenna have the following radii:
+    \begin{itemize}
+        \item R1 = 2.7 mm
+        \item R2 = 3.1 mm
+        \item R3 = 4.3 mm
+     \end{itemize}
+
+     \item \textbf{Lumped Port (P):} The length of the lumped port, used for excitation, is set at 5 mm.
+
+     \end{enumerate}
+
+\par These meticulously configured parameters collectively define the antenna's geometric and functional design, ultimately influencing its performance characteristics, such as gain, bandwidth, and resonant frequency. By carefully optimizing these dimensions, the antenna is able to operate efficiently within the Ku band (12-18 GHz).
+
+
+\newpage
+\section{LITERATURE SURVEY}
+
+\noindent \textbf{Design of Meandering Microstrip Leaky Wave Antenna: Dual-Band Polarization with Linear and Circular Modes, and Open Stopband Suppression.}
+\par This paper presents a dual-band meandering microstrip leaky-wave antenna that operates in both the Ku-band (11-15.5 GHz) with linear polarization and the K-band (19.4-27.5 GHz) with circular polarization. By leveraging higher spatial harmonics, the antenna achieves frequency scanning with a single-beam operation over a wide range. The unit cell design features three meanders with mitred corners, controlling beam scanning and suppressing spurious harmonics, while maintaining a consistent circular polarization with an axial ratio below 3 dB. Fabricated on a thin Rogers 3003 substrate, the antenna is suitable for conformal applications, demonstrating a scanning range of 72° in the K-band and 75° in the Ku-band. Additionally, the paper introduces a technique to suppress the open stopband, enabling continuous beam scanning. The proposed design offers a simple, via-free structure, making it a cost-effective and easy-to-manufacture solution for satellite communications, radar, and body-worn antennas.\\
+
+\noindent \textbf{Low-Profile Dual-Band Folded Transmitarray Antenna with Dual Circular Polarization and Independent Beam Control}
+\par This paper introduces a novel, low-profile, dual-band, dual-circularly polarized folded transmitarray antenna (FTA) designed for Ku-band applications, offering independent beam control. The antenna employs a linear-to-circular polarization conversion technique to radiate left-hand circularly polarized waves at 12 GHz and right-hand circularly polarized waves at 15 GHz. A compact design is achieved through a dual-band, dual-linearly polarized patch antenna feed and a folded electromagnetic wave path, reducing the profile by two-thirds compared to conventional transmitarrays. The antenna enables independent phase control at both frequency bands by distributing high-frequency and low-frequency elements within the same aperture. With its high gain, compact structure, low cost, and ease of integration, this FTA is ideal for two-way satellite communication systems with limited space and weight constraints.\\
+
+\noindent \textbf{Circularly Polarized Dual-Frequency MIMO Antenna with Cosecant-Squared Beam Pattern for Ku-Band Applications}
+\par In a groundbreaking achievement, researchers have designed an advanced circularly polarized dual-frequency MIMO antenna for Ku-band applications. This innovative antenna has a cosecant-squared radiation pattern that makes it highly attractive for use in satellite communications and radar applications. The core of this design is a microstrip patch with rectangular slots, which is very cleverly arranged. Utilizing the Woodward–Lawson technique, the team adjusted the amplitude tapering in such a way to ensure that the desired radiation properties are acquired. The result is an antenna working at two distinct frequencies, 13.2 GHz and 16.6 GHz. With this high performance, the antenna is quite compact, 52 × 24 × 0.8 mm in size, and possesses wide bandwidth along with a gain up to 16.9 dB, which qualifies it for high demanding applications. The addition of shorting pins helps to increase the gain and isolation of the antenna, with a mutual coupling as low as 30 dB.\\
+
+
+\noindent \textbf{Wideband, Stable-Gain Cavity-Backed Slot Antenna with Inner Cavity Walls and Baffle for X- and Ku-Band Applications}
+\par The research team has been able to design, simulate, fabricate, and test an advanced, wideband cavity-backed slot antenna array. The novelty of this new antenna is specifically for X- and Ku-band satellite communication applications, where high-performance, stable-gain, and compact designs are essential. The antenna's structure is known to be quite unique in having a baffle and inner cavity walls. It has good impedance matching capabilities, minimal mutual coupling, and an enhanced bandwidth and gain. Measured operating bandwidth of 48.2\% (9.6-15.7 GHz) and broadside gain of 11.5 to 14 dBi point to impressive results in this case.\\
+
+\noindent \textbf{Low-Profile, High-Aperture-Efficiency Air-Filled Substrate Integrated Cavity Antenna Array}
+\par In this paper researchers have broken ground in antenna design with the proposal of a novel low-profile, high-aperture-efficiency air-filled substrate integrated cavity (AFSIC) antenna array. This design has been developed especially for applications of Ku-band mobile satellite communications operating within a 10.9 to 12.5 GHz frequency band. The designed innovative antenna array yields an aperture efficiency of up to 86.1\% with a maximum gain of 28.8 dBi. It is the perfect solution for the mobile satellite communication system. The application of a waveguide-microstrip hybrid feeding network and a corner-shorted patch and stepped-length slot, while decreasing feed network loss and the aperture size to miniaturization level, achieves a wide bandwidth of 20.8\% along with a remarkably low profile of about 0.44$\lambda 0$ at 10.5 GHz. This pioneering AFSIC antenna array is aptly poised to directly achieve the growing demands for effective solutions that can facilitate wireless communication with high gain, efficiency, and compactness in revolutionizing the mobile satellite communication domain.\\
+
+\noindent \textbf{Shared Aperture Dual-Wideband Planar Antenna Arrays Using Any-Layer PCB Technology for mm-Wave Applications}
+\par In this paper researchers have developed an innovative novel shared aperture dual-wideband planar antenna array as part of millimeter-wave applications using state-of-the-art any-layer high-density interconnect PCB technology. Operating uniformly in two distinct frequency bands, it separates over a range of 28 to 30 GHz, and 57 to 71 GHz, with a striking separation ratio of 2.2:1. Using a separate feed for each band, the proposed design totally avoids the duplexer requirement and hence reduces the complexity in designing the antenna, increasing intraband coupling, and being cost-effective. The result indicates return loss better than 10 dB over both the bands with mutual coupling, making these ideal candidates for 5G and future 6G communications.
+
+\noindent \textbf{Cavity-Backed Circularly Polarized Cross-Dipole Phased Array Antennas}
+\par Researchers have achieved a significant breakthrough in phased array antenna design, presenting a 16 × 16 Ku-band circularly polarized phased array antenna that sets a new standard for performance. By incorporating a cross dipole, a metal cavity, and a threaded SMP connector, the design achieves remarkable results, including a mutual coupling of -26.6 dB at the center frequency, an impedance bandwidth of 10.1\% (13.1–14.5 GHz), and a low axial ratio (AR) of less than 2 dB across a scanning range of ±40° in both the xz and yz planes. With a measured gain fluctuation of less than 3 dB during scanning, this phased array antenna demonstrates exceptional performance, making it an ideal solution for satellite and airborne communication applications where high-quality circularly polarized beams and good impedance matching are crucial.\\
+
+\noindent \textbf{1-Bit Wideband Reconfigurable Transmitarray Unit Cell Using PIN Diodes for Ku-Band Applications}
+\par In this paper researchers have developed a new wideband reconfigurable transmitarray unit cell of a groundbreaking nature in transmitarray design. Specifically, this research focused on introducing 1-bit for Ku-band applications. In general, this novel unit cell contains a Vivaldi antenna used for transmitting purposes, a phase shifter, and a microstrip Yagi antenna as a receiver using two reverse-mounted PIN diodes. It accomplishes two separate phase states: 0° and 180° by applying the reverse mechanism for current reversal. Its excellent performance was further verified by fabricating and testing the unit cell, showing a minimum insertion loss of 1.58 dB and 1.61 dB for the two states, 1 dB bandwidth of around 15\% in the 14.73 to 17.28 GHz frequency range, and an incredibly stable 180° phase difference with a maximum error of only 3.8°. This unit cell exhibits tremendous potential in large-scale applications with its capabilities of digital phase control and improved H-plane performance, making it a promising candidate for advanced designs of transmitarray antennas.\\
+
+\noindent \textbf{Hollow-Waveguide Tri-Band Shared-Aperture Full-Corporate-Feed Continuous Transverse Stub Antenna}
+\par In this paper researchers have developed a breakthrough antenna design, namely, a revolutionary tri-band antenna combining multiple functionalities in a single compact unit by making use of cutting-edge hollow-waveguide technology. This game-changing antenna can be used with no interference issues across three distinct frequency bands: the Ku-band (11.25–15 GHz), the K-band (17.7–22 GHz), and the Ka-band (27.5–32 GHz) due to the broadband continuous transverse stub (CTS) radiator and the sophisticated six-port parallel-plate waveguide (PPW) multiplexer. The innovative use of LSGs, in addition to amplitude and phase adjustment techniques, ensures that the design delivers maximum performance. The prototype boasts impressive peak gains of over 24.7 dBi, 28.2 dBi, and 32.1 dBi in its corresponding frequency bands at the same time while maintaining efficiency at more than 80\%. It promises to make significant contributions in satellite communications and to the emerging landscape of 5G technology while offering a sleek and versatile solution for multiband applications.\\
+
+\noindent \textbf{Filtering Antenna with Quasi-Elliptic Response Based on SIW H-Plane Horn}
+\par In this paper researchers have achieved a major breakthrough in filtering antenna design, introducing a novel quasi-elliptic filtering antenna based on the substrate-integrated waveguide H-plane horn design. Featuring symmetrical horn elements and a trapezoidal dual-mode cavity, this is an innovative antenna designed to effectively introduce two radiation nulls to enhance frequency selectivity without increasing the size of the horn. The impedance bandwidth improves and backlobe radiation reduces through a modified transition at the horn aperture. When tested at the Ku-band, the antenna performed outstandingly; it has radiation nulls of 14.02 and 17.98 GHz, and the impedance bandwidth is as wide as 12.2\%, with a notable front-to-back ratio greater than 20 dB. The design herein is pioneering and involves significant leaps forward from earlier versions of filtering horn antennas in achieving unparalleled frequency selectivity, wide bandwidths, and excellent radiation characteristics. It opens up possibilities for miniaturization and integration of wireless communication systems.\\
+
+\noindent \textbf{Differentially Fed Dual-Polarized Antenna Array Using a Structural Composite Transmission-Line Network}
+\par Researchers have stretched the limits of antenna design with the development of a new, cutting-edge Ku-band differentially fed dual-polarized antenna array (DPAA) based on a structural composite transmission-line (SCTL) network. This hybrid differential structure with a dumbbell slot and L-shaped probes offers superior isolation and cross-polarization discrimination (XPD). The 2-D SCTL-based feeding network was cleverly designed to reduce the complexity of feeding without sacrificing the high performance. A prototype 4 × 4 dual-polarized array was demonstrated to have excellent results, with outstanding impedance matching and directional radiation characteristics, and a peak gain above 18.4 dBi within the 13.5-14.6 GHz frequency range. Furthermore, the measured isolation and XPD values exceeded 37.4 dB and 38.2 dB, respectively, indicating that this antenna is an ideal candidate for high-data-rate wireless applications.\\
+
+\noindent \textbf{A Hybrid Mechanism Water-Based Metasurface for Antenna RCS Reduction}
+\par Scientists recently reported the discovery of a new, water-based metasurface that has the impressive capability to lower the radar cross section of antennas by as much as 9 dB in the super high-frequency band. This new metasurface was composed of a two-layer structure with structural water and a metallic patch and cleverly uses both wave absorption and phase cancellation mechanisms for the minimization of scattering at various frequency bands ranging from the X-band, Ku-band, and K-band. The integration of this metasurface with an antenna leads to a very compact, low-profile design with impressive impedance bandwidth and a maximum gain of 9.9 dBi. This pioneering study paves the way for a new approach to designing low-RCS antennas, offering a game-changing solution for stealth applications.\\
+
+\noindent \textbf{Design of a Substrate Integrated Waveguide Cavity-Backed Self-Triplexing Antenna}
+\par In a tremendous leap forward, researchers have developed a revolutionary low-profile self-triplexing antenna, one that uses a substrate integrated waveguide (SIW) cavity to enhance Ku-band wireless communications. This innovative antenna features a smart slot configuration in the top metal layer of the SIW cavity, with three operational ports, providing independent tuning and excellent isolation on three different operational ports, with gains of 6.3, 6.06, and 5.63 dBi at frequencies of 12.9, 13.8, and 14.5 GHz, respectively, with an isolation of more than 29.7 dB. This concept exhibits flexible tunability, easily switching from self-triplexing to self-diplexing configuration, which in some cases may even produce circularly polarized radiations. \\
+
+\noindent \textbf{A 1$\lambda$-Spaced Dual-Mode Phased Array Antenna That Cancels Grating Lobes Using Silicon RFICs}
+\par Researchers have significantly advanced phased array antenna design through a new antenna based on the dual radiating modes concept designed for Ku-band applications that make use of silicon RFICs to cancel out grating lobes. In this new design, the innovative antenna has a concentric microstrip circular patch element that can support transverse magnetic modes TM11 and TM21, providing the possibility to carefully control the amplitude and phase to suppress the grating lobes. A prototype of a 16-element linear array revealed stunning results up to the suppression of grating lobes of 30.8 dB and a first sidelobe level of 15.2 dB. The design of the flat-panel-integrated beamforming network represents an excellent harmony of performance with compactness and would thus be an outstanding solution for military and wireless communication systems.\\
+
+\noindent \textbf{A Wearable 5.8 GHz SILO Device for Monitoring Breathing, Powered by Energy Harvesting}
+\par A new innovation in wearable sensing has been proposed by researchers by developing a breakthrough sensor that makes respiratory activity detection highly convenient as well as incredibly accurate. That's how 5.8 GHz self-injection locked oscillator (SILO) sensor made from pocket-size is capable to detect breath rate using a new technique of the self-injection locking radar; hence, avoiding the need of bulky equipment with which continuous detection is feasible in a highly accessible manner. What's more, this novel device has an RF-to-DC rectifier for energy harvesting and powers a microcontroller to wirelessly transmit critical breath rate information to smartphones, laptops, or other devices. With its sleek design, dual-port patch antenna, and passive demodulator, this sensor has demonstrated remarkable effectiveness in tracking breath rates, holding tremendous potential for early diagnosis and management of respiratory conditions and contributing to the advancement of wearable health technology.
+%---------------------------------------------------------
+
+
+\subsection{Comparison of Modals and Conclusion}
+
+\par It has the shape of a D, for which it is named, and it's an important microstrip patch antenna designed for satellite communication in the Ku band, namely, between 12-18 GHz. The design of this antenna provides better gain and directivity. In contrast to common rectangular microstrip patch antennas, which are utilized commonly due to their simplicity and ease of production, this variant or shape of D has a better gain and even a more sharp directional beam in comparison.\\
+
+\par In comparison, D-shaped models surpass the conventional rectangular patches: They overcome restrained bandwidth and the average efficiency from the optimized shape of geometry. With circular patch microstrip patch antennas, comparison generally shows increased gain and tighter control over a radiation pattern due to the higher gain of this model. These have compact designs with omnidirectional radiation - an ideal approach for applications wherein uniform coverage becomes mandatory.\\
+
+\par The D-shaped antenna finds a compromise between maximum gain and compact size, making it suitable for high-frequency applications like Ku-band communication. In contrast to E-shaped microstrip patch antennas, known for their wide bandwidth and better impedance matching, the D-shaped antenna compromises broadband performance for better gain and well-defined radiation pattern. This compromise makes the D-shaped design very suitable for satellite communication, where signal strength and directionality are more important.\\
+
+\par Compared to MIMO microstrip patch antennas, D-shaped design is simpler and better optimized for applications involving high gain single-channel situations. Although very effective for the data-intensive nature of wireless communication systems, the complexity of designing and fabricating MIMO antennas is a reality that often mandates multiple elements along with intricate feed networks. However, in some scenarios where just a single antenna is needed but at high gains, the D-shaped patch is still a possible candidate.\\
+
+\par The D-shaped high-gain microstrip patch antenna is a suitable candidate for Ku-band satellite communication that can achieve high gain with compact size and directional efficiency. Although it may not reach the wide bandwidth achieved by some advanced designs, its superior radiation performance undoubtedly makes it a good candidate in applications that demand focused signals of high power.\\
+
+
+%-----------------------------------------------------------
+
+\newpage
+\subsection{Research Gap}
+
+\par Despite tremendous growth in microstrip patch antennas for satellite communication, the design of antennas in Ku-band (12–18 GHz) with high gain, compact size, and efficiency is still a tough nut to crack. Most designs of such antennas face a tricky balance issue; engineers often have to compromise on any one of the parameters: gain, bandwidth, or polarization purity. This is particularly problematic since the demand for high-performance antennas is increasing, especially for applications like high-speed data transmission, direct-to-home (DTH) broadcasting, and satellite-based internet services. These applications require antennas that can deliver wide bandwidth, low losses, and superior radiation efficiency, all while staying compact and cost-effective.\\
+
+\par The good news is that emerging technologies such as metamaterials, AI-driven optimization, and advanced fabrication techniques open up exciting new possibilities. For example, AI-driven algorithms may change the design of antennas, where fine-tuning of parameters may be fully automated, and it could be used to develop even smaller and more efficient antennas with better performance. However, these technologies are still in their early stages, and their full potential hasn't been fully tapped in real-world antenna design.\\
+
+\par Looking ahead, researchers should focus on integrating innovation materials, multi-layered structures and adaptive beamforming techniques to overcome the current limitations. By combining these approaches, we could fill the performance gap and create antennas in response to the increasing demands of next generation satellite communication systems. The future lies in pushing boundaries and bringing together cutting-edge technology with practical design to deliver solutions that are both high-performance and versatile.\\
+
+\par Satellite communication antennas have traveled a long way; however, research is still very much underway in pushing the envelope of efficiency and gain. As of now, the designs made are quite impressive, but most of them have been optimized at the 13–16 GHz range, having efficiencies of approximately 86\%. However, since the demand for faster and more reliable satellite applications is growing at a tremendous pace, there's a pressing need to extend these capabilities into the 17–18 GHz range. It would allow next-generation technologies such as high-speed data transmission and stronger signal reliability, making them very essential for modern communication systems.\\
+
+\newpage
+\par To make the leap, researchers are exploring various new approaches from new materials to refined patch geometries and new fabrication techniques. In all this, there is a focus on achieving high performance at higher frequency ranges but keeping the antenna as compact and efficient as possible. Specially, the process involved detailing measurement of resonance frequencies to ensure operation at a peak where losses are minimized and gain is maximized.\\
+
+\par These challenges need to be addressed to develop the next wave of compact, high-performance Ku-band antennas. Tackling these challenges will not only meet today's needs but also lay the foundation for the future of satellite communication, ensuring that it can keep pace with the ever-growing demand for faster, more reliable connectivity.\\
+
+%\section{MODEL/STRUCTURE DESCRIPTION}
+%\subsection{Structural description}
+%\subsection{Material properties}
+
+%\section{Problem Statement}
+
+%\par The primary problem addressed in this project is the design of a high gain microstrip patch antenna that can operate efficiently within the Ku-band (12-18 GHz) while ensuring minimal losses and optimal polarization characteristics.
+
+%------------------------------------------------------------
+\newpage
+\section{METHODOLOGY OF WORK}
+
+\subsection{Introduction to Ansys Electronics Desktop Student (Ansys HFSS)}
+\par Ansys Electronics Desktop Student, featuring Ansys HFSS, is a powerful software suite tailored for students studying electromagnetic field simulations, serving as an essential tool for understanding complex RF design, antenna development, and wireless communication concepts. Renowned for its accuracy in modeling and solving intricate electromagnetic problems, HFSS is a valuable resource for designing and optimizing high-frequency systems, utilizing advanced numerical methods like the Finite Element Method to provide a robust simulation environment for modeling and predicting the behavior of antennas, waveguides, microwave circuits, and other high-frequency devices under various conditions.\\
+
+\par One of the primary strengths of HFSS lies in its capacity to tackle complex problems related to antenna design, electromagnetic interference (EMI), and signal integrity, particularly in the context of modern communication systems, including 5G, Wi-Fi, and other wireless technologies. HFSS is extensively utilized for modeling antenna radiation patterns, analyzing impedance matching, optimizing bandwidth, and minimizing mutual coupling between antennas, which are critical considerations for contemporary communication systems. Moreover, HFSS supports a broad range of high-frequency devices and structures, facilitating simulations across a vast frequency spectrum, from a few MHz to hundreds of GHz, making it an indispensable tool for emerging technologies like 5G and IoT.\\
+
+\par The student version of Ansys HFSS provides many professional-grade features, albeit with limitations tailored for educational purposes, primarily affecting model size, CPU core utilization, and complexity. Larger, intricate models may be restricted due to memory or processing constraints, and the limited number of available CPU cores may impact computation speed, particularly for large-scale simulations. Nonetheless, the student version of HFSS remains an exceptional platform for prototyping, hands-on experience, and learning RF and electromagnetic simulation, making it ideal for academic projects, research, and experimentation with various design configurations and scenarios.\\
+
+\par The Ansys HFSS interface is designed to be user-friendly and integrates various stages of the design process into a single environment, which simplifies the learning process. Students can begin by modeling their antenna or device in 3D, then proceed
+to mesh the geometry into finite elements that are solvable by the software. HFSS then uses these elements to solve for electromagnetic fields and other performance
+metrics such as S-parameters, radiation patterns, and impedance. After solving the model, students can visualize the results through a range of graphical
+and analytical tools, such as 2D and 3D plots, surface and contour maps, and animated field distributions. The visualization tools are particularly valuable for
+understanding how the electromagnetic fields behave within the structure and how design adjustments affect performance.\\
+
+\par Another important feature of HFSS is its extensive educational resources, which are invaluable for students new to electromagnetic simulation. The software
+includes built-in tutorials that cover a wide range of topics, from basic antenna design to more advanced topics like MIMO systems, metamaterials, and complex
+waveguide structures. Additionally, Ansys provides sample projects, comprehensive documentation, and a supportive online community to assist students in mastering
+the software and applying it to real-world design challenges. The software’s interface is also well-documented, making it easier for students to learn how to
+use it effectively and understand the various settings and options available for simulation.\\
+
+\par Ansys HFSS is considered the industry standard for high-frequency electromagnetic simulation, and gaining proficiency with this tool can significantly enhance
+a student’s career prospects. In fields such as RF design, telecommunications, aerospace, and electrical engineering, many companies rely on HFSS for designing antennas, optimizing wireless communication systems, and simulating high-speed circuits. Therefore, students who are proficient in HFSS are better equipped to enter these fields and contribute to the development of next-generation communication technologies. Furthermore, because HFSS is used extensively in both academia and industry, students gain familiarity with a tool that is highly regarded
+by professionals and researchers worldwide.\\
+
+\par Overall, Ansys Electronics Desktop Student, with its integrated simulation environment, educational resources, and powerful analysis capabilities, provides an excellent platform for students pursuing careers in RF design, wireless communications, and electrical engineering. It not only allows students to explore and learn fundamental electromagnetic concepts but also equips them with practical
+skills in designing and simulating real-world systems. Even with the limitations of the student version, it offers a valuable learning experience that prepares students
+for the demands of the modern wireless communication industry.Ansys created the renowned electromagnetic simulation programme known as HFSS (High-Frequency Structure Simulator), which is widely used in the design and analysis of high-frequency and high-speed electronic components. Maxwell’s equa tions are precisely solved by HFSS, which makes use of the finite element method (FEM)
+and finite difference time domain (FDTD) methods to forecast electromag-netic behaviour in a wide range of applications. This helps optimise performance characteristics including gain, radiation patterns, and impedance matching in the design of many types of antennas, including phased arrays and microstrip patch antennas.
+In order to assist engineers reduce signal losses and reflections, HFSS is also essential in the construction of microwave and RF components, such as filters, couplers, waveguides, and resonators.\\
+
+\begin{center}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\linewidth]{Ansys logo}
+    \caption{Ansys Electronics Desktop Student application icon}
+    \label{fig:Ansys logo}
+\end{figure}
+\end{center}
+
+\begin{center}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\linewidth]{twinbuilder}
+    \caption{Ansys HFSS tool}
+    \label{fig:twinbuilder}
+\end{figure}
+\end{center}
+
+\subsection{Implementation Of Model}
+\par The proposed work here consists of 3D rectangular boundary in which the design of the antenna is introduced.
+The designing part starts with configuring the copper substrate material, and three lumped ports are created by using certain parameters as mentioned in Table 1. \\
+
+%table 1 picture
+
+\par  After creation of lumped ports, the D shape is created by using a Hemisphere. The three separate rectangles are designed along with XZ and YZ planes. The created rectangles are placed near to the D shape and they are united together. The substate material is etched at particular spots with -----mm of depth, such that the Vias are inserted within the etched surface having the same dimensions. The type of vias used in this design are “Through-hole vias” which connects the multiple layers on PCB and allows the signals to pass through. \\
+
+\par There are certain considerations should be made before deciding the vias, they are listed below:
+
+\begin{itemize}
+    \item \textbf{Via Radius:} It affects the signal transmission of the antenna. The radius considered here for the vias is -0.014mm.
+    \item \textbf{Via Spacing:} It impacts the Radiation pattern. The spacing between the Vias considered here will be t1=2.7mm, t2=3.1mm, t3=4.3mm.
+    \item \textbf{Via Material:} It influences on the loss of signal and efficiency of the antenna. The material of vias used here is Copper material.
+    \item \textbf{Via Placement:} The placing of vias has to be done in proper manner such that it does not affect any of the parameters of the antenna
+\end{itemize}
+
+\par The Rectangular plot obtained will have some steps as follows:
+
+\begin{itemize}
+    \item Analysis- Give a solution setup along with the frequency which is required to excite the antenna, here we have provided 17-18 GHz and maximum number of passes is 20. Also provided with the start phase (9GHz) and end phase (27GHz).
+    \item Click on Validate all, the window of message manager will display a message of normal completion of simulation.
+    \item Analyze the file which you saved.
+    \item Go to results and create the modal/terminal report which should be in S parameters and verify the
+Frequency and s parameters in rectangular plot which is obtained.
+\end{itemize}
+
+\par For further simulation go the Results, create modal solution data report, select smith chart, and verify the Voltage Standing Wave Ratio (VSWR).
+On extension, the antenna has to be radiated, The Radiation Pattern obtained represents the distribution of electromagnetic energy radiated by a D shaped antenna to verify the parameters like radiation pattern, efficiency of the antenna, gain, Reflection losses.
+
+%------------------------------------------------------------
+
+\newpage
+\section{RESULTS AND DISCUSSIONS}
+\subsection{The result obtained from rectangular plot}
+
+\begin{center}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\linewidth]{SpRes171}
+    \caption{Rectangular plot of S parameter of frequency 17.1}
+    \label{fig:Rectangular plot of S parameter of frequency 17.1}
+\end{figure}
+\end{center}
+
+\begin{center}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\linewidth,height=0.4\linewidth]{SpRes}
+    \caption{Rectangular plot of S parameter of frequency 17.5}
+    \label{fig:Rectangular plot of S parameter of frequency 17.5}
+\end{figure}
+\end{center}
+\par  The frequency is directly proportional to the diameter of the hemisphere, i.e., if the radius of hemisphere is reduced, the frequency is also reduced. As we vary the diameter of the hemisphere of the D shape, the frequency in the rectangular plot of the S parameter changes.\\
+\par The two plots which we obtained here is most suitable frequency which is used to transmit the signal in satellite communication.As these plots have good gain  they have low losses during transmission.
+
+
+\begin{center}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\linewidth]{SpRes178}
+    \caption{Rectangular plot of S parameter of frequency 17.8}
+    \label{fig:Rectangular plot of S parameter of frequency 17.8}
+\end{figure}
+\end{center}
+\par This plot of S parameter frequency of 17.8GHz with the gain of -0.99GHz, this is not comparatively suitable for longer transmission of signal in case of Ku-band for satellite communication. it is desired to have less than or equal to 20db.
+
+
+\begin{center}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\linewidth,height=0.5\linewidth]{SpRes183}
+    \caption{Rectangular plot of S parameter of frequency 18.3}
+    \label{fig:Rectangular plot of S parameter of frequency 18.3}
+\end{figure}
+\end{center}
+\par This plot of S parameter frequency of 18.3GHz which is not in the range of Ku band(17-18GHz) which we required along with the gain of -13.3dB, this is obtained because of high variation in the diameter of the shape of antenna which we designed.
+
+\subsection{Comparison of various frequencies by varying the values of the D shape}
+
+\begin{table}[h!]
+\centering
+\renewcommand{\arraystretch}{1.5} % Adjusts row height
+\setlength{\tabcolsep}{4pt} % Adjusts column spacing
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+\textbf{Frequency (GHz)} & \multicolumn{4}{|c|}{\textbf{Varied values (mm)}} \\ \cline{2-5}
+                        & \textbf{Hemisphere} & \textbf{Rectangle 1} & \textbf{Rectangle 2} & \textbf{Rectangle 3} \\ \hline
+\textbf{17.1}           & 4                  & X-size: 1.6          & X-size: -1.9         & X-size: 1.6          \\
+                        &                    & Y-size: -3.34        & Y-size: -3.35        & Y-size: 3.34         \\ \hline
+\textbf{17.5}           & 5.656854           & X-size: 1.6          & X-size: -1.6         & X-size: 1.6          \\
+                        &                    & Y-size: -3.3431      & Y-size: -3.34        & Y-size: 3.34         \\ \hline
+\textbf{18.3}           & 7                  & X-size: 1.3          & X-size: -1.5         & X-size: 1.7          \\
+                        &                    & Y-size: -3.31        & Y-size: -3.34        & Y-size: 3.34         \\ \hline
+\end{tabular}
+\caption{Variation in the D shape}
+\label{tab:variation_dshape}
+\end{table}
+
+\par \noindent Variation in the D Shape
+
+The table below gives the varied values of the D shape for different frequencies.
+
+\begin{itemize}
+    \item \textbf{Frequency (GHZ):} This column gives the frequencies at which the D shape was tested.
+\item \textbf{Varied Values (mm):} This column gives the varied values of the D shape, which are further divided into four sub-columns: Hemisphere, Rectangle 1, Rectangle 2, and Rectangle 3.
+\item \textbf{Hemisphere:} This column is showing the radius of the hemisphere part of D shape.
+\item \textbf{Rectangle 1:} This column will list X and Y dimensions for the first rectangular part of the D shape
+\item \textbf{Rectangle 2:} This column will list X and Y dimensions for the second rectangular part of the D shape
+\item \textbf{Rectangle 3:} This column will list X and Y dimensions for the third rectangular part of the D shape.
+\end{itemize}
+
+From the table, we can deduce that the dimensions of the D shape depend on the frequency. With the increase in frequency, the dimensions of the D shape change. Further, the table indicates that the D shape is made up of a hemisphere and three rectangular components, each of which is independent of the other.
+
+
+%------------------------------------------------------------
+\newpage
+\section{CONCLUSION AND FUTURE SCOPE}
+\par It develops a new kind of design with a high gain D-shaped microstrip patch for satellite communication application in the Ku band (12-18 GHz). The optimized design focuses upon the gain efficiency with minimum losses to enhance transmission efficiency. Its performance analysis in detail is established by a rectangular plot of S-parameter, in which the antenna resonates at 17.1 GHz frequency. Although the gain of -24 dB obtained is less than some conventional designs, it does indicate that further optimization is required to achieve better efficiency.\\
+
+\par One of the main advantages of this design is that it actually decreases the antenna losses by increasing the operating frequency, an important factor in high-frequency communication systems. The antenna structure with vias, which connect different layers, also improves signal integrity and enhances the overall performance of the antenna. In addition, the implementation of the antenna on a flexible copper substrate makes it highly adaptable to millimeter-wave frequencies and very suitable for space applications, which require lightweight, flexible, and high-performance antennas.\\
+
+\par This new approach can open the doors to improved satellite communication systems, with the utilization of advanced materials and optimized structural configurations. With advancements in the design of antennas, scientists are able to produce more efficient and high-gain antennas to fulfill the needs of the new satellite communication technologies.\\
+
+\par With a growing demand for compact, lightweight, and high-performance antennas in modern communication systems, the future of high-gain microstrip patch antennas for satellite communication at the Ku band (12–18 GHz) is promising to grow. High-gain microstrip patch antennas will be useful in a number of applications where satellite-based connectivity is increasingly relied upon, including satellite internet services, Direct-to-Home (DTH) broadcasting, and remote sensing technologies.\\
+
+\par The rapid advancements in material science are expected to propel the development of these antennas, with high-performance substrates and metamaterials set to enhance antenna gain, reduce losses, and improve overall efficiency. Low-loss dielectric materials, flexible substrates, and nanotechnology-based enhancements will further elevate performance, making these antennas even more effective for space applications.\\
+
+\newpage
+\par Another exciting prospect for these antennas is the integration of beam-steering and phased-array technologies. This innovation will allow dynamic beamforming, thereby enabling satellites to adaptively point signals to any region, leading to enhanced coverage and optimized use of bandwidth. This capability would be highly relevant for next-generation satellite networks like 5G and beyond, where high-speed data transmission with low latency and reliable connectivity will be the defining characteristics.\\
+
+\par With the evolving needs of the satellite industry to support rising worldwide demands for broadband services and mobile connectivity, as well as IoT applications, high-gain microstrip patch antennas shall continue to remain on the cutting edge with regard to innovation, efficiency, and performance in future space-based communication networks. However, by synergistically employing leading-edge materials and technologies, researchers and engineers can unlock new possibilities for these types of antennas, ultimately shaping the future of satellite communication.\\
+
+
+%------------------------------------------------------------
+
+\newpage
+\section{BIBLIOGRAPHY}
+
+\begin{enumerate}
+    \item P. Vadher, G. Sacco, and D. Nikolayev, "Meandering Microstrip Leaky Wave Antenna With Dual-Band Linear–Circular Polarization and Suppressed Open Stopband," \textit{IEEE Transactions on Antennas and Propagation}, vol. 72, no. 1, pp. 375-386, Jan. 2024, doi: 10.1109/TAP.2023.3328558.
+
+		\item H. Lei, Y. Liu, Y. Jia, Z. Yue and X. Wang, "A Low-Profile Dual-Band Dual-Circularly Polarized Folded Transmitarray Antenna With Independent Beam Control," in IEEE Transactions on Antennas and Propagation, vol. 70, no. 5, pp. 3852-3857, May 2022, doi: 10.1109/TAP.2021.3125419.
+keywords: {Dual band;Polarization;Transmitting antennas;Reflector antennas;Microstrip antennas;Antennas;Satellite antennas;Circularly polarized (CP) wave;dual-band antenna;folded transmitarray antenna (FTA);linear-to-circular polarization conversion element;satellite communication},
+
+		\item M. V. N. M. Ayyadevara, B. S. Naga Kishore, V. D. Midasala and S. R. Edara, "Circularly Polarized Dual-Frequency MIMO Antenna With Cosecant-Squared Radiation Pattern for Ku-Band Applications," in IEEE Antennas and Wireless Propagation Letters, vol. 22, no. 6, pp. 1341-1345, June 2023, doi: 10.1109/LAWP.2023.3241958.
+keywords: {Antenna arrays;Gain;Pins;Antennas;Antenna radiation patterns;Slot antennas;Microstrip antennas;Antenna array;beam shaping;corner truncation;cosecant-squared pattern;multiple-input–multiple-output (MIMO);shorting pins},
+
+		\item Y. Asci, "Wideband and Stable-Gain Cavity-Backed Slot Antenna With Inner Cavity Walls and Baffle for X- and Ku-Band Applications," in IEEE Transactions on Antennas and Propagation, vol. 71, no. 4, pp. 3689-3694, April 2023, doi: 10.1109/TAP.2023.3239168.
+keywords: {Antenna arrays;Gain;Antennas;Broadband antennas;Slot antennas;Wideband;Mutual coupling;Baffle;broadband antenna;cavity wall;cavity-backed;direct broadcast from satellite (DBS);low-profile;satellite communication (SatCom);slot antenna;stable gain;wideband antenna},
+
+		\item J. Zhang, M. O. Akinsolu, B. Liu and G. A. E. Vandenbosch, "Automatic AI-Driven Design of Mutual Coupling Reducing Topologies for Frequency Reconfigurable Antenna Arrays," in IEEE Transactions on Antennas and Propagation, vol. 69, no. 3, pp. 1831-1836, March 2021, doi: 10.1109/TAP.2020.3012792.
+keywords: {Isolators;Mutual coupling;Topology;Optimization;Microstrip antenna arrays;Frequency reconfigurability;mutual coupling reduction;optimization;reconfigurable antenna;surrogate modeling},
+
+		\item B. Wang, Z. Zhao, K. Sun, T. Tao, X. Yang and D. Yang, "Low-Profile High-Aperture-Efficiency Air-Filled Substrate Integrated Cavity Antenna Array," in IEEE Antennas and Wireless Propagation Letters, vol. 21, no. 7, pp. 1442-1446, July 2022, doi: 10.1109/LAWP.2022.3171182.
+keywords: {Antenna arrays;Microstrip;Substrates;Patch antennas;Aperture antennas;Microstrip antennas;Mobile antennas;Air-filled substrate integrated cavity (AFSIC);aperture efficiency (AE);hybrid feeding network;low-profile;planar array},
+
+		\item M. Roodaki-Lavasani-Fard, S. Sinha, C. Soens, G. A. E. Vandenbosch, K. Mohammadpour-Aghdam and R. Faraji-Dana, "Shared Aperture Dual-Wideband Planar Antenna Arrays Using Any-Layer PCB Technology for mm-Wave Applications," in IEEE Transactions on Antennas and Propagation, vol. 70, no. 2, pp. 1087-1096, Feb. 2022, doi: 10.1109/TAP.2021.3111313.
+keywords: {Antenna arrays;Substrates;Nonhomogeneous media;Dual band;Copper;Gain;Fabrication;Dual-band antenna;dual-band array;high gain;interweaving;low-cost;wideband antenna},
+
+		\item L. -K. Zhang, Y. -X. Wang, J. -Y. Li, Y. Feng and W. Zhang, "Cavity-Backed Circularly Polarized Cross-Dipole Phased Arrays," in IEEE Antennas and Wireless Propagation Letters, vol. 20, no. 9, pp. 1656-1660, Sept. 2021, doi: 10.1109/LAWP.2021.3092148.
+keywords: {Phased arrays;Broadband antennas;Slot antennas;Satellite antennas;Antenna measurements;Mobile antennas;Microstrip antenna arrays;Cavity-backed (CB);circularly polarized (CP);cross-dipole antenna;Ku-band;phased array},
+
+		\item Y. Xiao, B. Xi, M. Xiang, F. Yang and Z. Chen, "1-Bit Wideband Reconfigurable Transmitarray Unit Cell Based on PIN Diodes in Ku-Band," in IEEE Antennas and Wireless Propagation Letters, vol. 20, no. 10, pp. 1908-1912, Oct. 2021, doi: 10.1109/LAWP.2021.3100494.
+keywords: {Phase shifters;PIN photodiodes;Phase measurement;Insertion loss;Microstrip;Metals;Wideband;Ku-band;PIN diodes;reconfigurable;transmitarray;wideband},
+
+		\item Q. You, Y. Lu, Y. Wang, J. Xu, J. Huang and W. Hong, "Hollow-Waveguide Tri-Band Shared-Aperture Full-Corporate-Feed Continuous Transverse Stub Antenna," in IEEE Transactions on Antennas and Propagation, vol. 70, no. 8, pp. 6635-6645, Aug. 2022, doi: 10.1109/TAP.2022.3161265.
+keywords: {Antennas;Frequency division multiplexing;Antenna arrays;Power dividers;Microstrip antennas;Wideband;Reflection coefficient;Continuous transverse stub (CTS) antenna;high-gain;line source generator;shared-aperture;tri-band},
+
+		\item M. -M. Yang, L. Zhang, Y. Zhang, H. -W. Yu and Y. -C. Jiao, "Filtering Antenna With Quasi-Elliptic Response Based on SIW H-Plane Horn," in IEEE Antennas and Wireless Propagation Letters, vol. 20, no. 7, pp. 1302-1306, July 2021, doi: 10.1109/LAWP.2021.3078535.
+keywords: {Filtering;Horn antennas;Couplings;Bandwidth;Passband;Dielectric resonator antennas;Resonant frequency;Filtering antenna;H-plane horn;radiation nulls;substrate-integrated waveguide (SIW)},
+
+		\item T. Jin, Y. You, L. Min, Z. Chen, Y. Lu and J. Huang, "Differentially Fed Dual-Polarized Antenna Array Using a Structural Composite Transmission-Line Network," in IEEE Transactions on Antennas and Propagation, vol. 72, no. 7, pp. 6105-6110, July 2024, doi: 10.1109/TAP.2024.3404259.
+keywords: {Microstrip antennas;Substrates;Surface impedance;Microstrip antenna arrays;Microstrip;Frequency measurement;Dipole antennas;Differentially fed;dual-polarized antenna array (DPAA);high isolation and cross-polarization discrimination (XPD);structural composite transmission line (SCTL)},
+
+		\item Y. Yang, C. Wang, H. Yang, S. Li, X. Zhou and J. Jin, "A Hybrid Mechanism Water-Based Metasurface for Antenna RCS Reduction," in IEEE Transactions on Antennas and Propagation, vol. 72, no. 8, pp. 6464-6471, Aug. 2024, doi: 10.1109/TAP.2024.3420079.
+keywords: {Metasurfaces;Absorption;Metals;Antenna feeds;Antennas;Microstrip antenna arrays;Electromagnetic scattering;Hybrid mechanism metasurface;low-profile antenna;low-RCS antenna;radar cross section (RCS) reduction;water-based metasurface},
+
+		\item Y. Yao, G. Dong, Z. Zhu and Y. Yang, "Design of Substrate Integrated Waveguide Cavity-Backed Self-Triplexing Antenna," in IEEE Antennas and Wireless Propagation Letters, vol. 23, no. 2, pp. 803-807, Feb. 2024, doi: 10.1109/LAWP.2023.3336652.
+keywords: {Slot antennas;Antennas;Tuning;Resonant frequency;Microstrip antennas;Antenna measurements;Frequency synchronization;Cavity-backed slot antenna;self-triplexing antenna;substrate integrated waveguide (SIW);tunability},
+
+		\item C. Laffey, J. -C. S. Chieh, S. K. Sharma and R. Farkouh, "1$\lambda$ Spaced Dual Radiating Modes Based Phased Array Antenna Using Silicon RFICs With Grating Lobe Cancellation," in IEEE Transactions on Antennas and Propagation, vol. 70, no. 12, pp. 12328-12333, Dec. 2022, doi: 10.1109/TAP.2022.3209363.
+keywords: {Phased arrays;Gratings;Linear antenna arrays;Antenna radiation patterns;Antenna arrays;Array signal processing;Microwave antenna arrays;Dual mode;flat panel;grating lobe suppression;phased array antenna;silicon RFICs;$TM_{12}$;$TM_{21}$},
+
+		\item G. Paolini, M. Shanawani, D. Masotti, D. M. M. . -P. Schreurs and A. Costanzo, "Respiratory Activity Monitoring by a Wearable 5.8 GHz SILO With Energy Harvesting Capabilities," in IEEE Journal of Electromagnetics, RF and Microwaves in Medicine and Biology, vol. 6, no. 2, pp. 246-252, June 2022, doi: 10.1109/JERM.2021.3132201.
+keywords: {Oscillators;Frequency modulation;Radio frequency;Frequency measurement;Monitoring;Demodulation;Broadband antennas;Breath;demodulation;energy harvesting;microwaves;radar;self-injection;wearable},
+
+\end{enumerate}
+
+\newpage
+\vspace*{\fill}%
+\begin{center}
+    \Large \textbf{Appendix - A: Plagiarism Report}
+    \addcontentsline{toc}{section}{Appendix - A: Plagiarism Report}
+\end{center}
+\vspace*{\fill}%
+
+
+\end{document}

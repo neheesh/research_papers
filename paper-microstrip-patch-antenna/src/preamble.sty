@@ -1,0 +1,80 @@
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{fancyhdr}
+\usepackage{ifthen}
+\usepackage{calc}
+\usepackage{eso-pic}
+\usepackage{tikz}
+\usetikzlibrary{calc}
+\usetikzlibrary{shapes.geometric, arrows}
+\usepackage{array}
+\usepackage[hidelinks]{hyperref}
+\usepackage[nottoc,numbib]{tocbibind}
+\usepackage{longtable}
+\usepackage{amsmath}
+\usepackage{gensymb}
+\usepackage{mathtools}
+\usepackage{float}
+\usepackage{chngcntr}
+
+\geometry{margin=1in,left=1.5in,}
+
+\graphicspath{{./images/}}
+
+\fancypagestyle{plain}{
+	\fancyhf{}
+	\setlength{\headheight}{14.49998pt}
+	\renewcommand{\headrulewidth}{0.5pt}
+	\renewcommand{\footrulewidth}{0.5pt}
+	\fancyfoot[L]{Dept. Of ECE, SVIT}
+	\fancyfoot[C]{2024-2025}
+	\fancyfoot[R]{\thepage}
+	\fancyhead[R]{High Gain Microstrip Patch Antenna For Satellite Communication At Ku Band (12-18) GHz}
+}
+
+\AtBeginDocument{%
+	\addtocontents{toc}{\protect\thispagestyle{empty}}%
+	\addtocontents{lof}{\protect\thispagestyle{empty}}%
+        \addtocontents{lot}{\protect\thispagestyle{empty}}%
+}
+
+\newboolean{borderon}
+\newcommand{\borders}{\setboolean{borderon}{true}}
+\newcommand{\noborders}{\setboolean{borderon}{false}}
+
+\newlength{\PageFrameTopMargin}
+\newlength{\PageFrameBottomMargin}
+\newlength{\PageFrameLeftMargin}
+\newlength{\PageFrameRightMargin}
+
+\setlength{\PageFrameTopMargin}{1cm}
+\setlength{\PageFrameBottomMargin}{1cm}
+\setlength{\PageFrameLeftMargin}{1cm}
+\setlength{\PageFrameRightMargin}{1cm}
+
+\makeatletter
+
+\newlength{\Page@FrameHeight}
+\newlength{\Page@FrameWidth}
+
+% PW modified the \AddToShipoutPicture to output nothing for borderon=false
+\AddToShipoutPicture{
+	\ifthenelse{\boolean{borderon}}{%
+	\thinlines
+	\setlength{\Page@FrameHeight}{\paperheight-\PageFrameTopMargin-\PageFrameBottomMargin}
+	\setlength{\Page@FrameWidth}{\paperwidth-\PageFrameLeftMargin-\PageFrameRightMargin}
+	\put(\strip@pt\PageFrameLeftMargin,\strip@pt\PageFrameTopMargin){
+		\framebox(\strip@pt\Page@FrameWidth, \strip@pt\Page@FrameHeight){}}}
+{}}
+
+\makeatother
+
+\tolerance=1
+\emergencystretch=\maxdimen
+\hyphenpenalty=10000
+\hbadness=10000
+
+\pagestyle{plain}
+
+\counterwithin{figure}{section}
+\counterwithin{table}{section}
