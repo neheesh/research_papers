@@ -1,0 +1,41 @@
+\tikzstyle{startstop} = [rectangle, rounded corners, minimum width=3cm, minimum height=1cm,text centered, draw=black, fill=black!10]
+\tikzstyle{io} = [trapezium, trapezium left angle=70, trapezium right angle=110, minimum width=3cm, minimum height=1cm, text centered, text width=3cm, draw=black, fill=black!10]
+\tikzstyle{process} = [rectangle, minimum width=3cm, minimum height=1cm, text centered, text width=3cm, draw=black, fill=black!10]
+\tikzstyle{decision} = [diamond, minimum width=2cm, minimum height=1cm, text centered, text width=2cm, draw=black, fill=black!10]
+\tikzstyle{arrow} = [thick,->,>=stealth]
+
+\begin{figure}[H]
+	\begin{center}
+		\begin{tikzpicture}[node distance=2cm]
+			\node (start) [startstop] {START};
+			\node (regs) [decision, below of=start, yshift=-1cm] {Registered Students};
+			\node (stop) [startstop, left of=regs, xshift=-3cm] {STOP};
+			\node (webs) [decision, below of=regs, yshift=-2.5cm] {Web Server};
+			\node (getregs) [io, below of=webs, yshift=-1cm] {Get the name of registered students};
+			\node (matchregs) [process, below of=getregs, yshift=-0.5cm] {Match the face on webcam to registered students};
+			\node (ifmatch) [decision, below of=matchregs, yshift=-1cm] {If matched};
+			\node (marka) [io, left of=ifmatch, xshift=-2.7cm] {Display ``Matched Name"};
+			\node (markn) [io, right of=ifmatch, xshift=2.7cm] {Display ``Not Registered"};
+			\node (postmatch) [process, below of=marka, yshift=-1cm] {Mark Attendence and POST the matched name to the web server};
+			\node (postmatchn) [process, below of=markn, yshift=-0.5cm] {POST ``Not Registered" to the web server};
+			\node (wait) [process, below of=ifmatch, yshift=-3cm] {WAIT};
+			\node (stop2) [startstop, below of=wait, yshift=0.4cm] {STOP};
+
+			\draw [arrow] (start) -- (regs);
+			\draw [arrow] (regs) -- node[anchor=south] {NO} (stop);
+			\draw [arrow] (regs) -- node[anchor=east] {YES} (webs);
+			\draw [arrow] (webs) -| node[anchor=south west] {NO} (stop);
+			\draw [arrow] (webs) -- node[anchor=east] {YES} (getregs);
+			\draw [arrow] (getregs) -- (matchregs);
+			\draw [arrow] (matchregs) -- (ifmatch);
+			\draw [arrow] (ifmatch) -- node[anchor=south] {YES} (marka);
+			\draw [arrow] (ifmatch) -- node[anchor=south] {NO} (markn);
+			\draw [arrow] (marka) -- (postmatch);
+			\draw [arrow] (markn) -- (postmatchn);
+			\draw [arrow] (postmatch) |- (wait);
+			\draw [arrow] (postmatchn) |- (wait);
+			\draw [arrow] (wait) -- (stop2);
+		\end{tikzpicture}
+	\end{center}
+	\caption{Attendance Management System Using Python}
+\end{figure}

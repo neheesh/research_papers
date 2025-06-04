@@ -1,0 +1,96 @@
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{fancyhdr}
+\usepackage{ifthen}
+\usepackage{calc}
+\usepackage{eso-pic}
+\usepackage{tikz}
+\usetikzlibrary{shapes.geometric, arrows}
+\usepackage{array}
+\usepackage{float}
+\usepackage{titlesec}
+\usepackage[hidelinks]{hyperref}
+\usepackage[nottoc,numbib]{tocbibind}
+\usepackage[backend=biber, style=ieee, maxnames=14]{biblatex}
+
+\geometry{
+	a4paper,
+	%total={170mm,257mm},
+	left=25mm,
+	right=25mm,
+	top=25mm,
+	bottom=25mm,
+	heightrounded,
+}
+
+\graphicspath{{./images/}}
+
+\fancypagestyle{plain}{
+    \fancyhf{}
+    \setlength{\headheight}{14.49998pt}
+    \renewcommand{\headrulewidth}{0.5pt}
+    \renewcommand{\footrulewidth}{0.5pt}
+    \fancyfoot[L]{Dept. Of ECE, SVIT}
+    \fancyfoot[C]{2023-2024}
+    \fancyfoot[R]{\thepage}
+    \fancyhead[R]{Attendence Monitoring System Using Facial Recognition}
+}
+
+\fancypagestyle{myfooters}{
+    \fancyhf{}
+    \setlength{\headheight}{14.49998pt}
+    \renewcommand{\headrulewidth}{0.0pt}
+    \renewcommand{\footrulewidth}{0.0pt}
+    \fancyfoot[C]{\thepage}
+}
+
+\AtBeginDocument{%
+	\addtocontents{toc}{\protect\thispagestyle{myfooters}}
+	\addtocontents{lof}{\protect\thispagestyle{myfooters}}
+}
+
+\newboolean{borderon}
+\newcommand{\borders}{\setboolean{borderon}{true}}
+\newcommand{\noborders}{\setboolean{borderon}{false}}
+
+\newlength{\PageFrameTopMargin}
+\newlength{\PageFrameBottomMargin}
+\newlength{\PageFrameLeftMargin}
+\newlength{\PageFrameRightMargin}
+
+\setlength{\PageFrameTopMargin}{20mm}
+\setlength{\PageFrameBottomMargin}{20mm}
+\setlength{\PageFrameLeftMargin}{18mm}
+\setlength{\PageFrameRightMargin}{20mm}
+
+\makeatletter
+
+\newlength{\Page@FrameHeight}
+\newlength{\Page@FrameWidth}
+
+% PW modified the \AddToShipoutPicture to output nothing for borderon=false
+\AddToShipoutPicture{
+  \ifthenelse{\boolean{borderon}}{%
+  \thinlines
+  \setlength{\Page@FrameHeight}{\paperheight-\PageFrameTopMargin-\PageFrameBottomMargin}
+  \setlength{\Page@FrameWidth}{\paperwidth-\PageFrameLeftMargin-\PageFrameRightMargin}
+  \put(\strip@pt\PageFrameLeftMargin,\strip@pt\PageFrameTopMargin){
+    \framebox(\strip@pt\Page@FrameWidth, \strip@pt\Page@FrameHeight){}}}
+{}}
+
+\makeatother
+
+\tolerance=1
+\emergencystretch=\maxdimen
+\hyphenpenalty=10000
+\hbadness=10000
+
+\titleformat{\chapter}[display]{\bfseries\LARGE}{Chapter \ \thechapter}{5pt}{}\titlespacing*{\chapter}{0pt}{0pt}{30pt}
+
+\setlength{\abovecaptionskip}{-1.5pt plus 0pt minus 0pt}
+
+\setlength\parindent{0pt}
+
+\addbibresource{refs.bib}
+
+\pagestyle{plain}
