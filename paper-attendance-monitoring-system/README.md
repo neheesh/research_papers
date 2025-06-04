@@ -1,4 +1,4 @@
-# myreports
+# attendance monitoring system using facial recognition
 
 ## Compiling for bibliography
 
